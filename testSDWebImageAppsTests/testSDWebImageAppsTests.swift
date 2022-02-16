@@ -6,27 +6,29 @@
 //
 
 import XCTest
+import SnapshotTesting
+@testable import testSDWebImageApps
+import SDWebImage
 
 class testSDWebImageAppsTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        setupSDWebImageForTesting()
+
+//        isRecording = true
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testViewController() throws {
+        let viewController = ViewController()
+
+        viewController.configure()
+
+        assertSnapshot(matching: viewController, as: .image(on: .iPhoneX))
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testMultipleImagesViewController() throws {
+        let viewController = MultipleImagesViewController()
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+        assertSnapshot(matching: viewController, as: .image(on: .iPhoneX))
     }
-
 }

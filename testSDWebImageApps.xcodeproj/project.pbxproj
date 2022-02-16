@@ -14,6 +14,14 @@
 		AC0B7DA72740343600B7D039 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0B7DA52740343600B7D039 /* LaunchScreen.storyboard */; };
 		AC0B7DB0274035D800B7D039 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AC0B7DAF274035D800B7D039 /* SDWebImage */; };
 		AC0B7DB8274036D400B7D039 /* testSDWebImageAppsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B7DB7274036D400B7D039 /* testSDWebImageAppsTests.swift */; };
+		AC0B7DC02740374F00B7D039 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = AC0B7DBF2740374E00B7D039 /* SnapshotTesting */; };
+		AC20404027403B0E000295C7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = AC20403F27403B0E000295C7 /* SDWebImage */; };
+		AC20404227403BAD000295C7 /* testingAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC20404127403BAD000295C7 /* testingAssets.xcassets */; };
+		AC20404427404117000295C7 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = AC20404327404117000295C7 /* sample.png */; };
+		AC6B0E0727BDB2FB004EEEB6 /* SDWebImage+Testing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B0E0627BDB2FB004EEEB6 /* SDWebImage+Testing.swift */; };
+		AC6B0E0927BDB33B004EEEB6 /* MultipleImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B0E0827BDB33B004EEEB6 /* MultipleImagesViewController.swift */; };
+		AC6B0E0C27BDB579004EEEB6 /* UIStackView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B0E0B27BDB579004EEEB6 /* UIStackView+Utils.swift */; };
+		AC6B0E0E27BDB59B004EEEB6 /* ListResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6B0E0D27BDB59B004EEEB6 /* ListResultBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,12 @@
 		AC0B7DA82740343600B7D039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC0B7DB5274036D400B7D039 /* testSDWebImageAppsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testSDWebImageAppsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0B7DB7274036D400B7D039 /* testSDWebImageAppsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testSDWebImageAppsTests.swift; sourceTree = "<group>"; };
+		AC20404127403BAD000295C7 /* testingAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = testingAssets.xcassets; sourceTree = "<group>"; };
+		AC20404327404117000295C7 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		AC6B0E0627BDB2FB004EEEB6 /* SDWebImage+Testing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDWebImage+Testing.swift"; sourceTree = "<group>"; };
+		AC6B0E0827BDB33B004EEEB6 /* MultipleImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleImagesViewController.swift; sourceTree = "<group>"; };
+		AC6B0E0B27BDB579004EEEB6 /* UIStackView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Utils.swift"; sourceTree = "<group>"; };
+		AC6B0E0D27BDB59B004EEEB6 /* ListResultBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResultBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC20404027403B0E000295C7 /* SDWebImage in Frameworks */,
+				AC0B7DC02740374F00B7D039 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +79,7 @@
 				AC0B7D992740343500B7D039 /* testSDWebImageApps */,
 				AC0B7DB6274036D400B7D039 /* testSDWebImageAppsTests */,
 				AC0B7D982740343500B7D039 /* Products */,
+				AC20403E27403B0E000295C7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +95,11 @@
 		AC0B7D992740343500B7D039 /* testSDWebImageApps */ = {
 			isa = PBXGroup;
 			children = (
+				AC6B0E0A27BDB56E004EEEB6 /* Utils */,
 				AC0B7D9A2740343500B7D039 /* AppDelegate.swift */,
 				AC0B7D9C2740343500B7D039 /* SceneDelegate.swift */,
 				AC0B7D9E2740343500B7D039 /* ViewController.swift */,
+				AC6B0E0827BDB33B004EEEB6 /* MultipleImagesViewController.swift */,
 				AC0B7DA32740343600B7D039 /* Assets.xcassets */,
 				AC0B7DA52740343600B7D039 /* LaunchScreen.storyboard */,
 				AC0B7DA82740343600B7D039 /* Info.plist */,
@@ -92,8 +111,27 @@
 			isa = PBXGroup;
 			children = (
 				AC0B7DB7274036D400B7D039 /* testSDWebImageAppsTests.swift */,
+				AC20404127403BAD000295C7 /* testingAssets.xcassets */,
+				AC20404327404117000295C7 /* sample.png */,
+				AC6B0E0627BDB2FB004EEEB6 /* SDWebImage+Testing.swift */,
 			);
 			path = testSDWebImageAppsTests;
+			sourceTree = "<group>";
+		};
+		AC20403E27403B0E000295C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC6B0E0A27BDB56E004EEEB6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AC6B0E0B27BDB579004EEEB6 /* UIStackView+Utils.swift */,
+				AC6B0E0D27BDB59B004EEEB6 /* ListResultBuilder.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +171,10 @@
 				AC0B7DBA274036D400B7D039 /* PBXTargetDependency */,
 			);
 			name = testSDWebImageAppsTests;
+			packageProductDependencies = (
+				AC0B7DBF2740374E00B7D039 /* SnapshotTesting */,
+				AC20403F27403B0E000295C7 /* SDWebImage */,
+			);
 			productName = testSDWebImageAppsTests;
 			productReference = AC0B7DB5274036D400B7D039 /* testSDWebImageAppsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -167,6 +209,7 @@
 			mainGroup = AC0B7D8E2740343500B7D039;
 			packageReferences = (
 				AC0B7DAE274035D800B7D039 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				AC0B7DBE2740374E00B7D039 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = AC0B7D982740343500B7D039 /* Products */;
 			projectDirPath = "";
@@ -192,6 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC20404227403BAD000295C7 /* testingAssets.xcassets in Resources */,
+				AC20404427404117000295C7 /* sample.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,8 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6B0E0E27BDB59B004EEEB6 /* ListResultBuilder.swift in Sources */,
 				AC0B7D9F2740343500B7D039 /* ViewController.swift in Sources */,
 				AC0B7D9B2740343500B7D039 /* AppDelegate.swift in Sources */,
+				AC6B0E0927BDB33B004EEEB6 /* MultipleImagesViewController.swift in Sources */,
+				AC6B0E0C27BDB579004EEEB6 /* UIStackView+Utils.swift in Sources */,
 				AC0B7D9D2740343500B7D039 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC6B0E0727BDB2FB004EEEB6 /* SDWebImage+Testing.swift in Sources */,
 				AC0B7DB8274036D400B7D039 /* testSDWebImageAppsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,10 +536,28 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		AC0B7DBE2740374E00B7D039 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		AC0B7DAF274035D800B7D039 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC0B7DAE274035D800B7D039 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		AC0B7DBF2740374E00B7D039 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC0B7DBE2740374E00B7D039 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		AC20403F27403B0E000295C7 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AC0B7DAE274035D800B7D039 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;

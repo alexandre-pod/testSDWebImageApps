@@ -25,10 +25,17 @@ class ViewController: UIViewController {
         imageView.contentMode = .scaleAspectFit
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    // MARK: - ViewController
 
-        imageView.sd_setImage(with: URL(string: "https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/SDWebImage_logo.png"), completed: nil)
+    func configure() {
+        imageView.sd_setImage(
+            with: URL(string: "https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/SDWebImage_logo.png")
+        )
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configure()
     }
 }
 
