@@ -27,15 +27,13 @@ class ViewController: UIViewController {
 
     // MARK: - ViewController
 
-    func configure() {
-        imageView.sd_setImage(
-            with: URL(string: "https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/SDWebImage_logo.png")
-        )
+    func configure(with url: URL?) {
+        imageView.sd_setImage(with: url)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        configure()
+        configure(with: URL(string: "https://raw.githubusercontent.com/SDWebImage/SDWebImage/master/SDWebImage_logo.png"))
     }
 }
 

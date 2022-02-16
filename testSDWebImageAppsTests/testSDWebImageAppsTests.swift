@@ -21,7 +21,7 @@ class testSDWebImageAppsTests: XCTestCase {
     func testViewController() throws {
         let viewController = ViewController()
 
-        viewController.configure()
+        viewController.configure(with: URL(string: "sample://testImageByName"))
 
         assertSnapshot(matching: viewController, as: .image(on: .iPhoneX))
     }

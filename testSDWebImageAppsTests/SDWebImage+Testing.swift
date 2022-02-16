@@ -31,12 +31,12 @@ class MyImageCache : NSObject, SDImageCacheProtocol {
     static let sampleImageData = sampleImage.pngData()!
 
     func queryImage(forKey key: String?, options: SDWebImageOptions = [], context: [SDWebImageContextOption : Any]?, completion completionBlock: SDImageCacheQueryCompletionBlock? = nil) -> SDWebImageOperation? {
-        completionBlock?(Self.sampleImage, Self.sampleImageData, .memory)
+        handleImageRequest(forKey: key, completion: completionBlock)
         return nil
     }
 
     func queryImage(forKey key: String?, options: SDWebImageOptions = [], context: [SDWebImageContextOption : Any]?, cacheType: SDImageCacheType, completion completionBlock: SDImageCacheQueryCompletionBlock? = nil) -> SDWebImageOperation? {
-        completionBlock?(Self.sampleImage, Self.sampleImageData, .memory)
+        handleImageRequest(forKey: key, completion: completionBlock)
         return nil
     }
 
@@ -53,6 +53,22 @@ class MyImageCache : NSObject, SDImageCacheProtocol {
     }
 
     func clear(with cacheType: SDImageCacheType, completion completionBlock: SDWebImageNoParamsBlock? = nil) {}
+
+    // MARK: - Private
+
+    private func handleImageRequest(forKey key: String?, completion completionBlock: SDImageCacheQueryCompletionBlock? = nil) {
+        guard
+            let stringURL = key,
+            let url = URL(string: stringURL),
+            url.scheme == "sample",
+            let imageName = url.host,
+            let image = UIImage(named: imageName, in: Bundle(for: MyImageCache.self), with: nil)
+        else {
+            completionBlock?(Self.sampleImage, Self.sampleImageData, .memory)
+            return
+        }
+        completionBlock?(image, image.pngData(), .memory)
+    }
 }
 
 func setupSDWebImageForTesting() {
