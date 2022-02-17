@@ -71,16 +71,16 @@ class MyImageCache : NSObject, SDImageCacheProtocol {
     }
 }
 
+private let cache = MyImageCache()
+private var cacheSetup = false
+
 func setupSDWebImageForTesting() {
-    SDImageCache.shared.clearMemory()
-    SDImageCache.shared.clearDisk()
-
-    SDImageCachesManager.shared.caches = [MyImageCache()]
-    SDWebImageManager.defaultImageCache = SDImageCachesManager.shared
-
+    guard !cacheSetup else { return }
     SDWebImageManager.shared.optionsProcessor = SDWebImageOptionsProcessor() { url, options, context in
         var mutableOptions = options
         mutableOptions.insert(.fromCacheOnly)
-        return SDWebImageOptionsResult(options: mutableOptions, context: context)
+        var mutableContext: [SDWebImageContextOption : Any] = context ?? [:]
+        mutableContext[.imageCache] = cache
+        return SDWebImageOptionsResult(options: mutableOptions, context: mutableContext)
     }
 }
